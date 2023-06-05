@@ -1,0 +1,197 @@
+{
+	"info": {
+		"_postman_id": "6a115830-0fa3-4291-bee3-d10fa7557f43",
+		"name": "AASetuSetup",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get a consent",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-client-id",
+						"value": "255d0b6c-492d-44cf-8581-e9494c7b0914",
+						"type": "default"
+					},
+					{
+						"key": "x-client-secret",
+						"value": "9c2fc756-3d17-46d6-b28d-be4d71953e83",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "https://fiu-uat.setu.co/consents/b9f54154-4127-4c82-a35d-8895a46c190a",
+					"protocol": "https",
+					"host": [
+						"fiu-uat",
+						"setu",
+						"co"
+					],
+					"path": [
+						"consents",
+						"b9f54154-4127-4c82-a35d-8895a46c190a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new consent",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-client-id",
+						"value": "255d0b6c-492d-44cf-8581-e9494c7b0914",
+						"type": "default"
+					},
+					{
+						"key": "x-client-secret",
+						"value": "9c2fc756-3d17-46d6-b28d-be4d71953e83",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"Detail\": {\n    \"consentStart\": \"2023-06-04T00:20:30.899Z\",\n    \"consentExpiry\": \"2023-06-07T05:44:53.822Z\",\n    \"Customer\": {\n      \"id\": \"7987538253@onemoney\"\n    },\n    \"FIDataRange\": {\n      \"from\": \"2023-01-01T00:00:00Z\",\n      \"to\": \"2023-02-01T00:00:00Z\"\n    },\n    \"consentMode\": \"VIEW\",\n    \"consentTypes\": [\n      \"TRANSACTIONS\"\n    ],\n    \"fetchType\": \"PERIODIC\",\n    \"Frequency\": {\n      \"value\": 30,\n      \"unit\": \"DAY\"\n    },\n    \"DataFilter\": [\n      {\n        \"type\": \"TRANSACTIONAMOUNT\",\n        \"value\": \"10\",\n        \"operator\": \">=\"\n      }\n    ],\n    \"DataLife\": {\n      \"value\": 0,\n      \"unit\": \"DAY\"\n    },\n    \"DataConsumer\": {\n      \"id\": \"setu-fiu-id\"\n    },\n    \"Purpose\": {\n      \"Category\": {\n        \"type\": \"string\"\n      },\n      \"code\": \"101\",\n      \"text\": \"Loan underwriting\",\n      \"refUri\": \"https://api.rebit.org.in/aa/purpose/101.xml\"\n    },\n    \"fiTypes\": [\n      \"DEPOSIT\"\n    ]\n  },\n  \"context\": [\n    {\n      \"key\": \"accounttype\",\n      \"value\": \"SAVINGS\"\n    }\n  ],\n  \"redirectUrl\": \"https://setu.co\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://fiu-uat.setu.co/consents",
+					"protocol": "https",
+					"host": [
+						"fiu-uat",
+						"setu",
+						"co"
+					],
+					"path": [
+						"consents"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Session ",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-client-id",
+						"value": "255d0b6c-492d-44cf-8581-e9494c7b0914",
+						"type": "default"
+					},
+					{
+						"key": "x-client-secret",
+						"value": "9c2fc756-3d17-46d6-b28d-be4d71953e83",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"consentId\": \"b9f54154-4127-4c82-a35d-8895a46c190a\",\n  \"DataRange\": {\n    \"from\": \"2023-01-10T00:00:00Z\",\n    \"to\": \"2023-01-12T00:00:00Z\"\n  },\n  \"format\": \"json\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://fiu-uat.setu.co/sessions",
+					"protocol": "https",
+					"host": [
+						"fiu-uat",
+						"setu",
+						"co"
+					],
+					"path": [
+						"sessions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getSession",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-client-id",
+						"value": "255d0b6c-492d-44cf-8581-e9494c7b0914",
+						"type": "default"
+					},
+					{
+						"key": "x-client-secret",
+						"value": "9c2fc756-3d17-46d6-b28d-be4d71953e83",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "https://fiu-uat.setu.co/sessions/394f34f8-11dc-4c37-ac68-1cc3608b46aa",
+					"protocol": "https",
+					"host": [
+						"fiu-uat",
+						"setu",
+						"co"
+					],
+					"path": [
+						"sessions",
+						"394f34f8-11dc-4c37-ac68-1cc3608b46aa"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "client_id",
+			"value": "255d0b6c-492d-44cf-8581-e9494c7b0914",
+			"type": "default"
+		},
+		{
+			"key": "client_secret",
+			"value": "9c2fc756-3d17-46d6-b28d-be4d71953e83",
+			"type": "default"
+		}
+	]
+}

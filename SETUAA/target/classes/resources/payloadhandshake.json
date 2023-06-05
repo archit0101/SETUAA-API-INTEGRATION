@@ -1,0 +1,54 @@
+{
+  "Detail": {
+    "consentStart": "2023-06-05T00:00:00.899Z",
+    "consentExpiry": "2023-06-07T05:44:53.822Z",
+    "Customer": {
+      "id": "7987538253@onemoney"
+    },
+    "FIDataRange": {
+      "from": "2023-01-01T00:00:00Z",
+      "to": "2023-04-01T00:00:00Z"
+    },
+    "consentMode": "STORE",
+    "consentTypes": [
+      "TRANSACTIONS"
+    ],
+    "fetchType": "PERIODIC",
+    "Frequency": {
+      "value": 30,
+      "unit": "DAY"
+    },
+    "DataFilter": [
+      {
+        "type": "TRANSACTIONAMOUNT",
+        "value": "10",
+        "operator": ">="
+      }
+    ],
+    "DataLife": {
+      "value": 1,
+      "unit": "DAY"
+    },
+    "DataConsumer": {
+      "id": "setu-fiu-id"
+    },
+    "Purpose": {
+      "Category": {
+        "type": "string"
+      },
+      "code": "101",
+      "text": "Loan underwriting",
+      "refUri": "https://api.rebit.org.in/aa/purpose/101.xml"
+    },
+    "fiTypes": [
+      "DEPOSIT"
+    ]
+  },
+  "context": [
+    {
+      "key": "accounttype",
+      "value": "SAVINGS"
+    }
+  ],
+  "redirectUrl": "https://setu.co"
+}
